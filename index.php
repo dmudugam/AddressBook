@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-if(isset($_SESSION["sess_user"])){
-  header("location:pages/Home.php");
-}else{
-
-?>
-
-
 <!DOCTYPE html>
 <!--
 Template Name: Edgpress
@@ -100,7 +90,3 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
-
-<?php
-}
-?>
