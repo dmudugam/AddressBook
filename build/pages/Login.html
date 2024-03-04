@@ -1,11 +1,4 @@
-<?php
 
-session_start();
-if(isset($_SESSION["sess_user"])){
-  header("location:Home.php");
-}else{
-
-?>
 
 <!DOCTYPE html>
 <!--
@@ -43,31 +36,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 
-<?php
-if(isset($_POST['submit']))
-{ 
-  $b = $_POST['fname'];
-  $c = md5($_POST['pw']);
-
-
-  $sql = "SELECT * FROM signup WHERE username= '$b' AND password='$c'";
-  $link = mysqli_connect('localhost','root','','dineth');
-  $done = mysqli_query($link,$sql);
-  if(mysqli_num_rows($done)==1)
-  {
-     echo 'Login Success';
-     session_start();
-     $_SESSION['sess_user'] = true;
-     $_SESSION['user'] = $b;
-     header('location:Home.php');
-  }
-  else
-  {
-    echo 'Login Failed';
-  }
-}
-
-?>
 
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
@@ -113,12 +81,12 @@ if(isset($_POST['submit']))
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div style="background-image:url('../images/demo/backgrounds/05.png'); height: 500px;>
-<div class="wrapper row3"  >
+<div style="background-image:url('../images/demo/backgrounds/05.png'); height: 500px;">
+<div class="wrapper row3">
 <main class="hoc container clear" > 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content" "> 
+    <div class="content"> 
       <!-- ################################################################################################ -->
       <center>
       <h2>Login</h2>
@@ -184,6 +152,3 @@ if(isset($_POST['submit']))
 </body>
 
 </html>
-<?php
-}
-?>
